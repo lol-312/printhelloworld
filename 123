@@ -81,7 +81,7 @@ do
         local DraggingInput, StartPosition
         local DragStart = Vector3.new(0,0,0)
         
-        local Main = CoreGui:FindFirstChild('Bot Contr').Main
+        local Main = CoreGui:FindFirstChild('Bot Controller').Main
         
         local function Update(Input)
             local Delta = Input.Position - DragStart
@@ -220,7 +220,7 @@ do
         BreakAllLoops = true
 
         for _, UI in next, CoreGui:GetChildren() do
-            if UI.Name == 'Visual Command UI Library | .gg/puxxCphTnK' then
+            if UI.Name == 'Bot Controller' then
                 for _, Item in next, UI.Main:GetChildren() do
                     if Item.Name ~= 'MainCorner' and Item.Name ~= 'MainStroke' then
                         Item:Destroy()
@@ -357,7 +357,7 @@ function Library:CreateWindow(Properties)
     -- // Create Elements
     local Container = Utility:Create('ScreenGui', {
         Parent = CoreGui,
-        Name = 'Visual Command UI Library | .gg/puxxCphTnK',
+        Name = 'Bot Controller',
         ResetOnSpawn = false
     }, {
         Utility:Create('Frame', {
